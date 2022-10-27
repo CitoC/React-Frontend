@@ -29,11 +29,28 @@ async function login(loginRequest) {
         baseURL: Config.baseUrl, // Base URL (localhost:8081 for example)
         url: Config.idm.login, // Path of URL ("/login")
         data: requestBody // Data to send in Body (The RequestBody to send)
-    }
+    };
+
+    return Axios.request(options);
+}
+
+async function register(registerRequest) {
+    const requestBody = {
+        email: registerRequest.email,
+        password: registerRequest.password
+    };
+
+    const options = {
+        method: "POST",
+        baseURL: Config.baseUrl,
+        url: Config.idm.register,
+        data: requestBody
+    };
 
     return Axios.request(options);
 }
 
 export default {
-    login
+    login,
+    register
 }

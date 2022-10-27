@@ -67,10 +67,7 @@ const StyledButton = styled.button`
  * you want to do some input validation, more of that in their documentation)
  */
 const Login = () => {
-    const {
-        accessToken, setAccessToken,
-        refreshToken, setRefreshToken
-    } = useUser();
+    const {accessToken, setAccessToken, refreshToken, setRefreshToken} = useUser();
 
 
     const {register, getValues, handleSubmit} = useForm();
